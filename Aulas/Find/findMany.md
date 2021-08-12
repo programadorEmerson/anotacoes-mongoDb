@@ -21,7 +21,7 @@ utilize comparadores ex:
 db.collection.findMany( { chave: { $compador: valor } } )
 
 comparadores: 
-$lt ( less than , menor que, <)
+$lt ( less than , menor que, <)<br>
 $lte ( less than or equal , menor ou igual a, <=)
 $gt ( greater than , maior que, >)
 $gte ( greater than or equal , maior ou igual a, >=)
