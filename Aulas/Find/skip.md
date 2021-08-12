@@ -8,17 +8,17 @@ db.colection.find().skip(2)
 Você pode combinar os métodos limit() e skip() criando, assim, uma paginação:
 db.collection.find( { chave: { $compador: valor } } ).limit(5).skip(5)
 
-comparadores: 
-$lt ( less than , menor que, <)
-$lte ( less than or equal , menor ou igual a, <=)
-$gt ( greater than , maior que, >)
-$gte ( greater than or equal , maior ou igual a, >=)
-$eq ( equal , igual a, =)
-$ne ( not equal , diferente de, !=, <>)
-$in ( in , dentro de)
-$nin ( not in , não está dentro de)
-$and ( and , se todas as condições forem verdadeiras retorna true )
-$or ( or , se apenas uma condição for verdadeira retorna true )
-$not ( not , inverte o resultado da expressão)
-$nor ( not or , semelhante ao or , porém trabalha com a condição false )
-$exists ( exists , verifica a existência de um atributo)
+comparadores: <br>
+$lt ( less than , menor que, <)<br>
+$lte ( less than or equal , menor ou igual a, <=)<br>
+$gt ( greater than , maior que, >)<br>
+$gte ( greater than or equal , maior ou igual a, >=)<br>
+$eq ( equal , igual a, =)<br>
+$ne ( not equal , diferente de, !=, <>)<br>
+$in ( in , dentro de)<br>
+$nin ( not in , não está dentro de)<br>
+$and ( and , se todas as condições forem verdadeiras retorna true )<br>
+$or ( or , se apenas uma condição for verdadeira retorna true )<br>
+$not ( not , inverte o resultado da expressão)<br>
+$nor ( not or , semelhante ao or , porém trabalha com a condição false )<br>
+$exists ( exists , verifica a existência de um atributo)<br>
