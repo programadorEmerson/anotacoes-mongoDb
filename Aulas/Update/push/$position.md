@@ -4,10 +4,8 @@ Para usar o modificador $position, ele deve aparecer com o modificador $each.
 <p>
 {
   $push: {
-    $push: {
-       $each: [ $each, $position, ... ],
-       $position: posição
-    }
+    $each: [$position, ... ],
+    $position: posição
   }
 }
 <p>
