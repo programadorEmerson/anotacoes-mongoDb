@@ -1,7 +1,7 @@
 Adicionando múltiplos valores a um array
 Se você quiser adicionar múltiplos valores a um array , isso também é possível utilizando o operador $push , mas dessa vez será necessário adicionar o modificador $each .
 A operação abaixo adicionará mais dois produtos ao array items do primeiro documento na coleção supplies :
-<br>
+<p>
 db.supplies.updateOne(
   {},
   {
@@ -24,9 +24,9 @@ push: {
   },
   { upsert: true },
 );
-<br>
+<p>
 Resultado:
-<br>
+<p>
 {
   _id : 1,
   items : [

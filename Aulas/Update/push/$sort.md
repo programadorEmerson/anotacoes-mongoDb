@@ -1,7 +1,7 @@
 Múltiplos modificadores
 O $push pode ser utilizado com múltiplos modificadores, fazendo várias operações ao mesmo tempo em um array .
 Desconsidere as últimas alterações com $push (se quiser acompanhar, você pode utilizar db.dropDatabase() para remover as alterações anteriores) e veja a realização dele abaixo, com ainda mais opções!
-<br>
+<p>
 db.supplies.updateOne(
   { _id: 1 },
   {
@@ -31,13 +31,13 @@ slice: 2,
   },
   { upsert: true },
 );
-<br>
+<p>
 Essa operação utiliza os seguintes modificadores:
 O modificador $each para adicionar múltiplos documentos ao array items ;
 O modificador $sort para ordenar todos os elementos alterados no array items pelo campo quantity em ordem descendente;
 E o modificador $slice para manter apenas os dois primeiros elementos ordenados no array items .
-Em resumo, essa operação mantém no array items apenas os dois documentos com a quantidade (campo quantity ) mais alto. Veja o resultado logo abaixo:<br>
-<br>
+Em resumo, essa operação mantém no array items apenas os dois documentos com a quantidade (campo quantity ) mais alto. Veja o resultado logo abaixo:<p>
+<p>
 {
   _id : 1,
   items : [
