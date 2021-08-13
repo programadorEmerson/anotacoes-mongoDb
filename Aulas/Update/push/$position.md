@@ -4,17 +4,17 @@ Para usar o modificador $position, ele deve aparecer com o modificador $each.
 <p>
 {
   $push: {
-    <field>: {
-       $each: [ <value1>, <value2>, ... ],
-       $position: <num>
+    $push: {
+       $each: [ $each, $position, ... ],
+       $position: posição
     }
   }
 }
 <p>
-<num> indica a posição no array, com base em um índice baseado em zero:
+posição indica a posição no array, com base em um índice baseado em zero:
 <p>
-Um número não negativo corresponde à posição no array, começando do início do array. Se o valor de <num> for maior ou igual ao comprimento do array, o $positio nmodificador não tem efeito e $push adiciona elementos ao final do array.
-Um número negativo corresponde à posição no array, contando (mas não incluindo) o último elemento do array. Por exemplo, -1 indica a posição imediatamente antes do último elemento no array. Se você especificar vários elementos na $each matriz, o último elemento adicionado estará na posição especificada a partir do final. Se o valor absoluto de <num> for maior ou igual ao comprimento do array, o $push adiciona elementos ao início do array.
+Um número não negativo corresponde à posição no array, começando do início do array. Se o valor de posição for maior ou igual ao comprimento do array, o $positio nmodificador não tem efeito e $push adiciona elementos ao final do array.
+Um número negativo corresponde à posição no array, contando (mas não incluindo) o último elemento do array. Por exemplo, -1 indica a posição imediatamente antes do último elemento no array. Se você especificar vários elementos na $each matriz, o último elemento adicionado estará na posição especificada a partir do final. Se o valor absoluto de posição for maior ou igual ao comprimento do array, o $push adiciona elementos ao início do array.
 <p>
 Exemplos 
 Adicionar elementos no início do array
