@@ -1,5 +1,5 @@
 Imagine que você precisa de documentos que tenham apenas um valor que está dentro de um array de objetos, estranho, não é? Mas vamos ver um exemplo:
-<p>
+
 db.recipes.insertMany([
   {
     title: "Panqueca Simples",
@@ -20,12 +20,12 @@ db.recipes.insertMany([
     ],
   },
 ]);
-<p>
+
 Caso você saiba o index exato do elemento em que deseja-se alterar alguma propriedade, pode-se fazer algo como:
-<p>
+
 db.recipes.updateOne( { title: "Panqueca Simples" }, { $set: { "ingredients.1.unit": "xícara" } } );
 Mas, e se você não soubesse qual posição do array que gostaria de alterar um objeto? Ou melhor, e se quisesse alterar dinamicamente todas as receitas que usam farinha, para usarem farinha integral e que a unit seja xícara? Vamos incrementando alguns exemplos até responder esta última suposição usando o Array Filters .
-<p>
+
 db.recipes.updateOne(
   { title: "Panqueca Simples" },
   {
@@ -37,7 +37,7 @@ db.recipes.updateOne(
 );
 Achamos um documento com title igual a "Panqueca Simples" e atualizamos o objeto com propriedade name igual a "Farinha" do array ingredients , alterando o valor do campo name para "Farinha Integral" .
 Agora, vamos adicionar "xícara" ao campo unit do objeto com name igual a "Farinha Integral" !
-<p>
+
 db.recipes.updateOne(
   { title: "Panqueca Simples" },
   {
@@ -47,10 +47,10 @@ db.recipes.updateOne(
   },
   { arrayFilters: [ { "elemento.name": "Farinha Integral" } ] },
 );
-<p>
+
 Precisamos mudar o arrayFilter de "Farinha" para "Farinha Integral" , pois na query anterior alteramos o name desse ingrediente.
 Se quiséssemos trocar todos os ingredientes da coleção que são "Farinha" por "Farinha Integral" e colocar "xícara" como valor de unit , poderíamos seguir o seguinte exemplo:
-<p>
+
 db.recipes.updateMany( // Passamos de updateOne para updateMany.
   {}, // Retiramos a restrição do título.
   {
