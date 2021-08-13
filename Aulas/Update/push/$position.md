@@ -1,6 +1,6 @@
 O $position modificador especifica o local no array em que o $push operador insere elementos. Sem o $position modificador, o $push operador insere elementos no final do array. 
 <p>
-Para usar o $position modificador, ele deve aparecer com o $each modificador.
+Para usar o modificador $position, ele deve aparecer com o modificador $each.
 <p>
 {
   $push: {

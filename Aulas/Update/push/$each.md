@@ -26,7 +26,7 @@ push: {
 );
 <p>
 Resultado:
-<p>
+<br>
 {
   _id : 1,
   items : [
