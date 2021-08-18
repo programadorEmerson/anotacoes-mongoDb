@@ -1,0 +1,22 @@
+O operador $regex fornece os "poderes" das expressões regulares ( regular expressions ) para seleção de strings . MongoDB utiliza expressões regulares compatíveis com Perl ( PCRE ), versão 8.42, e com suporte a UTF-8 .
+Um uso muito comum para o operador $regex é fazer consultas como o LIKE do SQL . Considere os seguintes documentos na coleção products :
+
+{ _id: 100, sku: "abc123", description: "Single line description." },
+{ _id: 101, sku: "abc789", description: "First line\nSecond line" },
+{ _id: 102, sku: "xyz456", description: "Many spaces before     line" },
+{ _id: 103, sku: "xyz789", description: "Multiple\nline description" }
+
+A query abaixo seleciona todos os documentos em que o campo sku "termine" com "789" :
+
+db.products.find({ sku: { $regex: /789$/ } });
+O exemplo acima equivale ao comando LIKE do SQL :
+
+SELECT * FROM products WHERE sku LIKE "%789";
+Você pode especificar opções na regex. Por exemplo, você pode especificar a opção case-insensitive , fazendo com que o MongoDB ignore letras maiúsculas ou minúsculas. Veja o exemplo abaixo, que retorna palavras "começando" com ABC:
+
+db.products.find({ sku: { $regex: /^ABC/i } });
+O caractere i ao lado da expressão indica a opção case-insensitive . Dessa forma, apenas os documentos que contenham ABC no campo sku serão retornados, sem se importar se está em maiúsculo ou minúsculo:
+
+{ "_id" : 100, "sku" : "abc123", "description" : "Single line description." }
+{ "_id" : 101, "sku" : "abc789", "description" : "First line\nSecond line" }
+Basicamente, tudo o que você pode construir com expressões regulares em outras linguagens de programação funcionará também em suas queries no MongoDB.
